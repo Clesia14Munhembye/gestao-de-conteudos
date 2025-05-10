@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Gestão de Conteúdos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" th:href="@{/css/Style.css}">
+  <script th:src="@{/js/script.js}" defer></script>
+ <style>   
+
+ .sidebar { min-height: 100vh; background-color: #343a40; color: white; padding: 20px; }
+    .content { padding: 20px; }
+    a.nav-link { color: white; }</style>
+</head>
+<body>
+
+<div th:replace="frangment/fragment :: navebar"></div>
+
+  <header>
+    <h1>Gestão de Conteúdos Digitais</h1>
+    <p>Automatize, planeje e publique nas redes com facilidade.</p>
+  </header>
+
+  <nav>
+  
+  <div class="d-flex">
+    <div class="sidebar">
+      <h4>Outliers</h4>
+      <a class="nav-link" href="/dashboard">Dashboard</a>
+      <a class="nav-link" href="/tarefas">Tarefas</a>
+      <a class="nav-link" href="/agenda">Agenda</a>
+    </div>
+    <div class="content flex-fill">
+     <!-- <div th:replace="${content}"></div> -->
+    </div>
+  </div>
+    <div>
+      <a href="login.html" class="btn">Entrar</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">🌙 Tema</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h2>Organize sua presença digital com eficiência</h2>
+    <p>Nosso sistema integra planejamento, agendamento, colaboração e publicação em uma única plataforma poderosa.</p>
+    <a href="criar-conta.html" class="btn">Experimente grátis</a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <i data-lucide="list" width="40" height="40"></i>
+      <h3>Planejamento de Conteúdos</h3>
+      <p>Crie listas, organize cronogramas e otimize o trabalho.</p>
+    </div>
+    <div class="feature">
+      <i data-lucide="share-2" width="40" height="40"></i>
+      <h3>Integração com Redes</h3>
+      <p>Agende publicações no Facebook, Instagram e outras plataformas.</p>
+    </div>
+    <div class="feature">
+      <i data-lucide="users" width="40" height="40"></i>
+      <h3>Colaboração em Equipe</h3>
+      <p>Trabalho em tempo real com aprovação de posts em etapas.</p>
+    </div>
+    <div class="feature">
+      <i data-lucide="credit-card" width="40" height="40"></i>
+      <h3>Pagamentos e M-Pesa</h3>
+      <p>Gerencie assinaturas e cobranças via M-Pesa de forma segura.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Sistema de Gestão de Conteúdos. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+

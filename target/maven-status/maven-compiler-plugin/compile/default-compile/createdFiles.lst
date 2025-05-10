@@ -1,0 +1,11 @@
+org\cleu\gestaoDeConteudo\controller\MidiaController.class
+org\cleu\gestaoDeConteudo\model\Plano.class
+org\cleu\gestaoDeConteudo\controller\HomeController.class
+org\cleu\gestaoDeConteudo\controller\TerefaController.class
+org\cleu\gestaoDeConteudo\model\Tarefa.class
+org\cleu\gestaoDeConteudo\model\Midia.class
+org\cleu\gestaoDeConteudo\model\Plataforma.class
+org\cleu\gestaoDeConteudo\GestaoDeConteudoApplication.class
+org\cleu\gestaoDeConteudo\model\Assinatura.class
+org\cleu\gestaoDeConteudo\model\Usuario.class
+org\cleu\gestaoDeConteudo\controller\UsuarioController.class

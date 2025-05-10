@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<nav th:fragment="navebar">
+    <ul>
+        <li><a th:href="@{/dashboard}">Dashboard</a></li>
+        <li><a th:href="@{/tarefas}">Tarefas</a></li>
+        <li><a th:href="@{/midia}">Mídia</a></li>
+        <li><a th:href="@{/usuario/login}">login</a></li>
+        <li><a th:href="@{/usuario/criar}">Criar</a></li>
+        <li><a th:href="@{/}">Home</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Sistema de Gestão de Conteúdos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #3730a3;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .forgot-password a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+    .login-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box; /* Isso vai garantir que a caixa de login leve em consideração o padding */
+}
+
+.input-field {
+  width: 100%; /* Garante que os campos de email e senha ocupem toda a largura disponível */
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Isso vai garantir que o padding e a borda sejam considerados na largura total */
+}
+
+  </style>
+   <link rel="stylesheet" th:href="@{/css/Style.css}">
+   <script th:src="@{/js/script.js}" defer></script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Entrar na Plataforma</h2>
+    <form action="dashboard.html" method="POST" id="loginForm">
+      <input type="email" class="input-field" placeholder="Email" required name="email" />
+      <input type="password" class="input-field" placeholder="Senha" required name="password" />
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <div class="forgot-password">
+      <a href="#">Esqueceu sua senha?</a>
+    </div>
+  </div>
+
+  <script>
+    // Simulando o envio de dados, redireciona para o dashboard
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Redirecionar para a página de Dashboard (simulação)
+      window.location.href = 'dashboard.html'; // ou para o destino desejado
+    });
+  </script>
+
+</body>
+</html>

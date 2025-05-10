@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.cleu.gestaoDeConteudo.GestaoDeConteudoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.07 s -- in org.cleu.gestaoDeConteudo.GestaoDeConteudoApplicationTests
