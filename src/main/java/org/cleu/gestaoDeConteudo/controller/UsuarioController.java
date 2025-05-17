@@ -1,8 +1,10 @@
 package org.cleu.gestaoDeConteudo.controller;
 
+import org.cleu.gestaoDeConteudo.model.Plano;
 import org.cleu.gestaoDeConteudo.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,7 +42,15 @@ public class UsuarioController {
             mv.addObject("erro", "Verifique seus dados e preenche de novo");
         }
         UsuarioRepository.save(usuario);
-        mv.setViewName("redirect:/tarefas");
+        mv.setViewName("redirect:/usuario/plano");
+        return mv;
+    }
+
+    @RequestMapping(path = "plano", method = RequestMethod.GET)
+    public ModelAndView plano(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("usuario/plano");
+        mv.addObject("plano", new Plano());
         return mv;
     }
     
