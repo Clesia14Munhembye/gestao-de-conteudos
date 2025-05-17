@@ -7,20 +7,15 @@
   <title>Criar Conta - Gestão de Conteúdos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/style.css" />
-
 <script th:src="@{/js/script.js}" defer></script>
 </head>
 <body>
-
-<div th:replace="frangment/fragment :: navebar"></div>
-
   <header>
     <h1>Criar Conta</h1>
     <p>Comece a gerenciar seus conteúdos agora mesmo.</p>
   </header>
 
   <div class="form-container">
-    <h2>Cadastre-se</h2>
     <form action="/usuario/save" method="post" th:object="${usuario}">
       <div class="form-group">
         <label for="nome">Nome completo</label>
@@ -41,9 +36,7 @@
     </div>
   </div>
 
-  <footer>
-    © 2025 Sistema de Gestão de Conteúdos. Todos os direitos reservados.
-  </footer>
+<div th:replace="~{frangment/fragment :: footer}"></div>
 
 </body>
 </html>

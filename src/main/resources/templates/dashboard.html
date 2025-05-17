@@ -1,81 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt"
-      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard - Gestão de Conteúdos</title>
   <link href="/https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
   <script src="/https://unpkg.com/lucide@latest"></script>
-  <style>
-    .dashboard {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  <script th:src="@{/js/script.js}" defer></script>
 
-    .dashboard h2 {
-      font-size: 1.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    body.dark-mode .card {
-      background: #1e293b;
-      color: white;
-    }
-
-    .card i {
-      background-color: var(--secondary-light);
-      padding: 0.5rem;
-      border-radius: 8px;
-    }
-
-    body.dark-mode .card i {
-      background-color: #334155;
-    }
-
-    .card-content h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-content p {
-      font-size: 0.95rem;
-      color: #6b7280;
-    }
-
-    body.dark-mode .card-content p {
-      color: #d1d5db;
-    }
-  </style>
-
-<link rel="stylesheet" th:href="@{/css/Style.css}">
-<script th:src="@{/js/script.js}" defer></script>
 </head>
 <body>
-<div th:replace="frangment/fragment :: navebar"></div>
+<div th:replace="~{frangment/fragment :: navebar}"></div>
+
   <header>
     <h1>Dashboard</h1>
     <p>Bem-vindo de volta! Gerencie seus conteúdos aqui.</p>
@@ -98,7 +36,34 @@
           <p>5 tarefas aguardando conclusão.</p>
         </div>
       </div>
-      
+      <div class="card">
+        <i data-lucide="credit-card" width="32" height="32"></i>
+        <div class="card-content">
+          <h3>Status da Assinatura</h3>
+          <p>Plano válido até 20/07/2025.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i data-lucide="credit-card" width="32" height="32"></i>
+        <div class="card-content">
+          <h3>Status da Assinatura</h3>
+          <p>Plano válido até 20/07/2025.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i data-lucide="credit-card" width="32" height="32"></i>
+        <div class="card-content">
+          <h3>Status da Assinatura</h3>
+          <p>Plano válido até 20/07/2025.</p>
+        </div>
+      </div>
+      <div class="card">
+        <i data-lucide="credit-card" width="32" height="32"></i>
+        <div class="card-content">
+          <h3>Status da Assinatura</h3>
+          <p>Plano válido até 20/07/2025.</p>
+        </div>
+      </div>
       <div class="card">
         <i data-lucide="credit-card" width="32" height="32"></i>
         <div class="card-content">
@@ -107,11 +72,10 @@
         </div>
       </div>
     </div>
+
   </main>
 
-  <footer>
-    © 2025 Sistema de Gestão de Conteúdos. Todos os direitos reservados.
-  </footer>
+ <div th:replace="~{frangment/fragment :: footer}"></div>
 
   <script>
     lucide.createIcons();

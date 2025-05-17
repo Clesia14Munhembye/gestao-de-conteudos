@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos de Preço</title>
+  <link rel="stylesheet" href="/css/plano.css">
+</head>
+<body>
+  <div class="pricing-container">
+    <!-- Basic -->
+    <div class="card basic">
+      <div class="header">BASIC</div>
+      <div class="price">$15</div>
+      <ul class="features">
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+      </ul>
+      <button class="buy-btn" onclick="buyPlan('Basic')">BUY NOW</button>
+    </div>
+
+    <!-- Standard -->
+    <div class="card standard">
+      <div class="header">STANDARD</div>
+      <div class="price">$30</div>
+      <ul class="features">
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+      </ul>
+      <button class="buy-btn" onclick="buyPlan('Standard')">BUY NOW</button>
+    </div>
+
+    <!-- Premium -->
+    <div class="card premium">
+      <div class="header">PREMIUM</div>
+      <div class="price">$45</div>
+      <ul class="features">
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+        <li>Lorem ipsum dolor</li>
+      </ul>
+      <button class="buy-btn" onclick="buyPlan('Premium')">BUY NOW</button>
+    </div>
+  </div>
+
+  <script>
+    function buyPlan(planName) {
+      alert("Você escolheu o plano: " + planName);
+    }
+  </script>
+</body>
+</html>
