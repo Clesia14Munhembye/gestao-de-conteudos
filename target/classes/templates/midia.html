@@ -7,74 +7,13 @@
   <title>Escolha a Plataforma para Anúncio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .media-container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+  <link rel="stylesheet" th:href="@{/css/media.css}">
 
-    .media-container h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .platforms {
-      display: flex;
-      justify-content: space-around;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .platform-card {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-      width: 200px;
-      cursor: pointer;
-      transition: transform 0.3s;
-      text-align: center;
-    }
-
-    .platform-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .platform-card img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 1rem;
-    }
-
-    .platform-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .platform-card p {
-      font-size: 0.9rem;
-      color: #6b7280;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--secondary-light);
-      color: var(--text-light);
-      font-size: 0.875rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-  </style>
-  <link rel="stylesheet" th:href="@{/css/Style.css}">
-  <script th:src="@{/js/script.js}" defer></script>
 </head>
 
 <body>
 
-  <div th:replace="frangment/fragment :: navebar"></div>
+  <div th:replace="~{frangment/fragment :: navebar}"></div>
   <header>
     <h1>Escolha a Plataforma para Anúncio</h1>
     <p>Escolha a plataforma onde deseja criar seu anúncio para Meta Ads.</p>
@@ -113,7 +52,8 @@
       window.location.href = url; // Redireciona para a plataforma de anúncios Meta
     }
   </script>
-
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script th:src="@{/js/script.js}" defer></script>
 </body>
 
 </html>

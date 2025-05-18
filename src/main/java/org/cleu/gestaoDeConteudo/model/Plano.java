@@ -25,6 +25,7 @@ public class Plano {
 
     private String descricao;
 
+    @Temporal(TemporalType.DATE)
     private Date validade;
 
     private double preco;

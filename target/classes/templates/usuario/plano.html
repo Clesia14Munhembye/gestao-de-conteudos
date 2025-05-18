@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br"
-      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -12,49 +11,63 @@
 <body>
   <div class="pricing-container">
     <!-- Basic -->
-    <form action="" method="post">
+    <form th:action="@{/usuario/plano/save}" method="post">
+      <input type="hidden" name="nome" value="BASIC" />
+      <input type="hidden" name="preco" value="200" />
+      <input type="hidden" name="usuario.id" th:value="${plano.usuario.id}" />
+
       <div class="card basic">
         <div class="header">BASIC</div>
-        <input type="hidden" th:field="*{nome}" value="BASIC">
         <div class="price">200 MTS</div>
-        <input type="hidden" th:field="*{preco}" value="200">
         <ul class="features">
-          <li>Lorem ipsum dolor</li>
-          <li>Lorem ipsum dolor</li>
-          <li>Lorem ipsum dolor</li>
-          <li>Lorem ipsum dolor</li>
-          <li>Lorem ipsum dolor</li>
+          <li>15 Conteudos</li>
+          <li>5 Imagems</li>
+          <li>5 Videos</li>
+          <li>7 dias: Lembretes</li>
+          <li>Acesso: 1 Mes</li>
         </ul>
-        <button class="buy-btn" onclick="buyPlan('Basic')">BUY NOW</button>
+        <button class="buy-btn" onclick="buyPlan('basic')" type="submit">COMPRAR</button>
       </div>
     </form>
 
     <!-- Standard -->
     <div class="card standard">
-      <div class="header">STANDARD</div>
-      <div class="price">$30</div>
-      <ul class="features">
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-      </ul>
-      <button class="buy-btn" onclick="buyPlan('Standard')">BUY NOW</button>
+      <form th:action="@{/usuario/plano/save}" method="post">
+        <input type="hidden" name="nome" value="STANDARD" />
+        <input type="hidden" name="preco" value="500" />
+        <input type="hidden" name="usuario.id" th:value="${plano.usuario.id}" />
+
+        <div class="header">STANDARD</div>
+        <div class="price">500 MTS</div>
+        <ul class="features">
+          <li>100 Conteudos</li>
+          <li>50 Imagems</li>
+          <li>50 Videos</li>
+          <li>15 Dias: Lembretes</li>
+          <li>Acesso: 1 Mes</li>
+        </ul>
+        <button class="buy-btn" onclick="buyPlan('Standard')">COMPRAR</button>
+      </form>
     </div>
 
     <!-- Premium -->
     <div class="card premium">
-      <div class="header">PREMIUM</div>
-      <div class="price">$45</div>
-      <ul class="features">
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-        <li>Lorem ipsum dolor</li>
-      </ul>
-      <button class="buy-btn" onclick="buyPlan('Premium')">BUY NOW</button>
+      <form th:action="@{/usuario/plano/save}" method="post">
+        <input type="hidden" name="nome" value="PREMIUM" />
+        <input type="hidden" name="preco" value="700" />
+        <input type="hidden" name="usuario.id" th:value="${plano.usuario.id}" />
+
+        <div class="header">PREMIUM</div>
+        <div class="price">700 MTS</div>
+        <ul class="features">
+          <li>Ilimitado:  Conteudos</li>
+          <li>Ilimitado: Imagems</li>
+          <li>Ilimitado: Videos</li>
+          <li>31 dias: Lembrete</li>
+          <li>Acesso: 1 Mes</li>
+        </ul>
+        <button class="buy-btn" onclick="buyPlan('Premium')">COMPRAR</button>
+      </form>
     </div>
   </div>
 

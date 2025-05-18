@@ -9,9 +9,9 @@
 
 <nav th:fragment="navebar">
     <ul>
-        <li><a th:href="@{/dashboard}">Dashboard</a></li>
-        <li><a th:href="@{/tarefas}">Tarefas</a></li>
-        <li><a th:href="@{/midia}">Mídia</a></li>
+        <li><a th:href="|@{/dashboard?us}=${user}|">Dashboard</a></li>
+        <li><a th:href="|@{/tarefa/get?us}=${user}|">Tarefas</a></li>
+        <li><a th:href="|@{/midia?us}=${user}|">Mídia</a></li>
         <li><a th:href="@{/}">Home</a></li>
     </ul>
 </nav>

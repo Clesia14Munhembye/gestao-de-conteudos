@@ -3,6 +3,7 @@ package org.cleu.gestaoDeConteudo.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -29,7 +30,12 @@ public class Tarefa {
     private String legenda;
     private String tema;
 
+    @ManyToOne
+    @JoinColumn(name = "conteudo_id")
+    private Conteudo conteudo;
+
     @Column(columnDefinition = "date")
+     @DateTimeFormat(pattern = "yyyy-MM-dd") 
     @Temporal(value = TemporalType.DATE)
     private Date agendamento;
 
