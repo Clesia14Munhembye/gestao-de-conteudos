@@ -15,9 +15,17 @@
     <div class="d-flex justify-content-between align-items-center mb-4"
       style="display: flex; justify-content: space-between; align-items: center;">
       <h1 class="notion-header">Minhas Tarefas</h1>
-      <div>
-        <input type="text" placeholder="Buscar tarefas..." id="searchInput">
-        <button class="btn" onclick="openModal()">Nova Tarefa em Grupo</button>
+      <div style="display: flex;">
+        <div style="margin-left: 10px; margin-right: 10px;">
+          <br><br><br>
+          <a class="btn btn-primary" style="text-decoration: none;" th:href="@{/tarefas/pdf(us=${user})}" target="_blank">
+          Baixar PDF
+        </a>
+        </div>
+        <div style="margin-bottom: 5px;">
+          <input type="text" placeholder="Buscar tarefas..." id="searchInput">
+          <button class="btn" onclick="openModal()">Nova Tarefa em Grupo</button>
+        </div>
       </div>
     </div>
 
@@ -30,7 +38,10 @@
           <div th:if="${tarefa.usuario.id == user}">
             <p><strong>Tema:</strong> <span th:text="${tarefa.tema}">Tema</span></p>
             <p><strong>Legenda:</strong> <span th:text="${tarefa.legenda}">Legenda</span></p>
-            <p><strong>Agendamento:</strong>
+            <p><strong>Criado em:</strong>
+              <span th:text="${#dates.format(tarefa.dataCriacao, 'dd/MM/yyyy')}">Data</span>
+            </p>
+            <p><strong>Prazo:</strong>
               <span th:text="${#dates.format(tarefa.agendamento, 'dd/MM/yyyy')}">Data</span>
             </p>
             <hr />
@@ -43,7 +54,7 @@
         <h5>Ops, Ainda não tem nenhuma tarefas Registada, Adicione novas tarefas</h5>
       </div>
     </div>
-    
+
 
 
     <!-- Modal -->
@@ -60,11 +71,11 @@
 
           <div id="tarefas-container">
             <div class="tarefa" th:each="tarefa, iterStat : *{tarefas}">
-              <label>Legenda</label>
-              <input type="text" th:field="*{tarefas[__${iterStat.index}__].legenda}" />
               <label>Tema</label>
               <input type="text" th:field="*{tarefas[__${iterStat.index}__].tema}" />
-              <label>Data de Agendamento</label>
+              <label>Legenda</label>
+              <input type="text" th:field="*{tarefas[__${iterStat.index}__].legenda}" />
+              <label>Prazo</label>
               <input type="date" th:field="*{tarefas[__${iterStat.index}__].agendamento}" />
               <hr>
             </div>
