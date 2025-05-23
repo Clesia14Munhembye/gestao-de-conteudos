@@ -1,7 +1,9 @@
+org\cleu\gestaoDeConteudo\service\JerarPDFTarefas.class
 org\cleu\gestaoDeConteudo\controller\TerefaController.class
 org\cleu\gestaoDeConteudo\model\Tarefa.class
 org\cleu\gestaoDeConteudo\repository\ConteudoRepository.class
 org\cleu\gestaoDeConteudo\repository\UsuarioRepository.class
+org\cleu\gestaoDeConteudo\service\TarefaDTO.class
 org\cleu\gestaoDeConteudo\GestaoDeConteudoApplication.class
 org\cleu\gestaoDeConteudo\model\Usuario.class
 org\cleu\gestaoDeConteudo\controller\MidiaController.class
@@ -14,7 +16,9 @@ org\cleu\gestaoDeConteudo\model\Midia.class
 org\cleu\gestaoDeConteudo\repository\TarefaRepository.class
 org\cleu\gestaoDeConteudo\model\Conteudo.class
 org\cleu\gestaoDeConteudo\model\Plataforma.class
+org\cleu\gestaoDeConteudo\controller\PlanoController.class
 org\cleu\gestaoDeConteudo\utils\Constantes.class
 org\cleu\gestaoDeConteudo\config\SecurityConfig.class
+org\cleu\gestaoDeConteudo\controller\RelatorioController.class
 org\cleu\gestaoDeConteudo\model\Assinatura.class
 org\cleu\gestaoDeConteudo\controller\UsuarioController.class

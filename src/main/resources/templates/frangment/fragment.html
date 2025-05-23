@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
+
 <body>
 
 
-<nav th:fragment="navebar">
+  <nav th:fragment="navebar">
     <ul>
-        <li><a th:href="|@{/dashboard?us}=${user}|">Dashboard</a></li>
-        <li><a th:href="|@{/tarefa/get?us}=${user}|">Tarefas</a></li>
-        <li><a th:href="|@{/midia?us}=${user}|">Mídia</a></li>
-        <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="|@{/dashboard?us}=${user}|">Dashboard</a></li>
+      <li><a th:href="|@{/tarefa/get?us}=${user}|">Tarefas</a></li>
+      <li><a th:href="|@{/midia?us}=${user}|">Mídia</a></li>
+      <li><a th:href="@{/}">Home</a></li>
     </ul>
-</nav>
+  </nav>
 
 
-  <footer class="bg-dark text-white text-center py-3" th:fragment="footer">
-    © 2025 Sistema de Gestão de Conteúdos. Todos os direitos reservados.
+
+
+  <footer class="footer bg-dark text-white text-center py-3" th:fragment="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Sistema de gestão de Conteúdo</h4>
+        <ul>
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Nossos valores</a></li>
+          <li><a href="#">Nossos Programas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Política de Cookies</a></li>
+          <li><a href="#">Suplementos de Privacidade</a></li>
+          <li><a href="#">Configurar cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Junta-te a nós</h4>
+        <ul>
+          <li><a href="#">Posições existentes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>&nbsp;Home</h4>
+        <ul>
+          <li><a href="#">Nosso Business</a></li>
+          <li><a href="#">Integracão com M-Pesa</a></li>
+          <li><a href="#">Fornecedores</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
 </body>
+
 </html>

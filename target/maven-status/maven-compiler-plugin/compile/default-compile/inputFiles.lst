@@ -1,6 +1,8 @@
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\config\SecurityConfig.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\HomeController.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\MidiaController.java
+C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\PlanoController.java
+C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\RelatorioController.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\TerefaController.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\controller\UsuarioController.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\GestaoDeConteudoApplication.java
@@ -16,5 +18,7 @@ C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cl
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\repository\PlanoRepository.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\repository\TarefaRepository.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\repository\UsuarioRepository.java
+C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\service\JerarPDFTarefas.java
+C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\service\TarefaDTO.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\service\UsuarioDetailsService.java
 C:\Users\ASUS ExpertBook\Downloads\Cleu\gestao-de-conteudos\src\main\java\org\cleu\gestaoDeConteudo\utils\Constantes.java
