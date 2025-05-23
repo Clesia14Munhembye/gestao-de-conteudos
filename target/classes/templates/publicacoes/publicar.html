@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Plataforma | Sistema de gestão de conteúdo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/tarefa.css}">
+</head>
+
+<body>
+    <div th:replace="~{frangment/fragment :: navebar}"></div>
+
+    <div class="container">
+        <h1 class="notion-header">Publicar Novo Conteúdo Nas Plataformas</h1>
+
+        <form th:action="@{/plataforma/save}" method="post" enctype="multipart/form-data">
+
+            <!-- Nome da plataforma -->
+            <div class="form-group">
+                <label for="nome">Nome da Plataforma</label>
+                <select name="nome" id="nome" required>
+                    <option value="">Escolha ...</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                </select>
+            </div>
+
+            <!-- Seleção de tarefa única -->
+            <div class="form-group">
+                <label for="tarefa">Selecionar Tarefa:</label>
+                <select name="tarefa" id="tarefa" required>
+                    <option value="">Escolha uma tarefa...</option>
+                    <option th:each="tarefa : ${tarefas}" th:value="${tarefa.id}" th:text="${tarefa.tema}"></option>
+                </select>
+            </div>
+
+            <!-- Upload de imagem -->
+            <div class="form-group">
+                <label for="imagem">Imagem para a Tarefa</label>
+                <input type="file" name="imagem" id="imagem" accept="image/*" required>
+            </div>
+
+            <!-- Botões -->
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a th:href="@{/plataforma/get}" class="btn btn-secondary">← Voltar à lista</a>
+                <button type="submit" class="btn">Publicar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

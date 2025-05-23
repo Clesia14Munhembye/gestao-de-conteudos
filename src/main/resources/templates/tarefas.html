@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tarefas | OUTLIERS</title>
+  <title>Tarefas | Sistema de gestão de conteudo</title>
   <link rel="stylesheet" th:href="@{/css/style.css}">
   <link rel="stylesheet" th:href="@{/css/tarefa.css}">
 </head>
@@ -24,7 +24,7 @@
         </div>
         <div style="margin-bottom: 5px;">
           <input type="text" placeholder="Buscar tarefas..." id="searchInput">
-          <button class="btn" onclick="openModal()">Nova Tarefa em Grupo</button>
+          <button class="btn" onclick="openModal()">Adicione novas tarefas</button>
         </div>
       </div>
     </div>
@@ -49,9 +49,9 @@
         </div>
       </div>
     </div>
-    <div id="taskList" th:if="${conteudos}==null">
+    <div id="taskList" th:if="${conteudos == null or #lists.isEmpty(conteudos)}">
       <div class="notion-card">
-        <h5>Ops, Ainda não tem nenhuma tarefas Registada, Adicione novas tarefas</h5>
+        <h4>Ops, Ainda não tem nenhuma tarefas Registada, Adicione novas tarefas</h4>
       </div>
     </div>
 
@@ -102,12 +102,12 @@
         const index = container.children.length;
         const novaTarefa = `
         <div class="tarefa">
-          <label>Legenda</label>
-          <input type="text" name="tarefas[${index}].legenda" />
-          <label>Tema</label>
-          <input type="text" name="tarefas[${index}].tema" />
-          <label>Data de Agendamento</label>
-          <input type="date" name="tarefas[${index}].agendamento" />
+          <label>Tema</label></br>
+          <input type="text" name="tarefas[${index}].tema" /></br>
+          <label>Legenda</label></br>
+          <input type="text" name="tarefas[${index}].legenda" /></br>
+          <label>Data de conclusao</label></br>
+          <input type="date" name="tarefas[${index}].agendamento" /></br>
           <hr>
         </div>`;
         container.insertAdjacentHTML('beforeend', novaTarefa);

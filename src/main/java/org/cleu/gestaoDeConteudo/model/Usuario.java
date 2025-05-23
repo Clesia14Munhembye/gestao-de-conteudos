@@ -26,6 +26,7 @@ public class Usuario {
     private String nome;
 
     @Email(message = "Inseri um email certo!")
+    @Column(unique = true)
     private String email;
 
     @Size(min = 5 , message = "A sua senha deve ter no {min} 5 carateres")

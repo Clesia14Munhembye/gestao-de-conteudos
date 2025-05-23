@@ -24,9 +24,6 @@ public class Tarefa {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    @ManyToMany(mappedBy = "tarefas")
-    private List<Plataforma> plataformas;
-
     private String legenda;
     private String tema;
 
@@ -35,7 +32,7 @@ public class Tarefa {
     private Conteudo conteudo;
 
     @Column(columnDefinition = "date")
-     @DateTimeFormat(pattern = "yyyy-MM-dd") 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(value = TemporalType.DATE)
     private Date agendamento;
 
@@ -43,4 +40,5 @@ public class Tarefa {
     @Column(name = "data_criacao", columnDefinition = "datetime")
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date dataCriacao;
+
 }

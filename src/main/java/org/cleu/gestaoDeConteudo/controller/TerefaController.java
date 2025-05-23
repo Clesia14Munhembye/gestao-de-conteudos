@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import java.security.Principal;
 import java.util.List;
 
 import org.cleu.gestaoDeConteudo.model.Conteudo;
@@ -32,10 +32,11 @@ public class TerefaController {
     private UsuarioRepository usuarioRepository;
 
     @RequestMapping(path = "/get", method = RequestMethod.GET)
-    public String mostrarTarefa(Model model, @RequestParam("us") Integer usuarioId) {
+    public String mostrarTarefa(Model model, Principal principal) {
+        Usuario usuario= usuarioRepository.findByEmail(principal.getName()).orElse(null);
         model.addAttribute("conteudoWrapper", new TerefaWrapper());
-        model.addAttribute("user",usuarioId);
-        List<Conteudo> conteudos = conteudoRepository.findConteudosByUsuarioId(usuarioId);
+        model.addAttribute("user",usuario.getId());
+        List<Conteudo> conteudos = conteudoRepository.findConteudosByUsuarioId(usuario.getId());
         model.addAttribute("conteudos", conteudos);
         return "tarefas";
     }
@@ -51,7 +52,7 @@ public class TerefaController {
             tarefa.setUsuario(usuario);
             tarefaRepository.save(tarefa);
         }
-        return "redirect:/tarefa/get?us=" + usuario.getId();
+        return "redirect:/tarefa/get";
     }
 
 }

@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import java.util.List;
-
 @Getter
 @Setter
 @ToString
@@ -22,13 +20,4 @@ public class Plataforma {
     @Size(max = 50)
     @NotNull
     private String nome;
-
-    @ManyToMany
-    @JoinTable(
-            name = "plataforma_tarefa", // tabela de ligação
-            joinColumns = @JoinColumn(name = "plataforma_id"),
-            inverseJoinColumns = @JoinColumn(name = "tarefa_id")
-    )
-    private List<Tarefa> tarefas;
-
 }
