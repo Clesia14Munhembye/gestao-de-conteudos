@@ -26,51 +26,24 @@
         <i data-lucide="calendar" width="32" height="32"></i>
         <div class="card-content">
           <h3>Conteúdos Agendados</h3>
-          <p>12 posts prontos para publicação.</p>
+          <p><span th:text="${numconteudo}"></span> posts prontos para publicação.</p>
         </div>
       </div>
       <div class="card">
         <i data-lucide="clock" width="32" height="32"></i>
         <div class="card-content">
           <h3>Tarefas Pendentes</h3>
-          <p>5 tarefas aguardando conclusão.</p>
+          <p><span th:text="${numTarefas}"></span> tarefas aguardando conclusão.</p>
         </div>
       </div>
       <div class="card">
         <i data-lucide="credit-card" width="32" height="32"></i>
         <div class="card-content">
           <h3>Status da Assinatura</h3>
-          <p>Plano válido até 20/07/2025.</p>
+          <p th:text="'Plano válido até ' + ${#temporals.format(validadePlano, 'dd/MM/yyyy')}"></p>
         </div>
       </div>
-      <div class="card">
-        <i data-lucide="credit-card" width="32" height="32"></i>
-        <div class="card-content">
-          <h3>Status da Assinatura</h3>
-          <p>Plano válido até 20/07/2025.</p>
-        </div>
-      </div>
-      <div class="card">
-        <i data-lucide="credit-card" width="32" height="32"></i>
-        <div class="card-content">
-          <h3>Status da Assinatura</h3>
-          <p>Plano válido até 20/07/2025.</p>
-        </div>
-      </div>
-      <div class="card">
-        <i data-lucide="credit-card" width="32" height="32"></i>
-        <div class="card-content">
-          <h3>Status da Assinatura</h3>
-          <p>Plano válido até 20/07/2025.</p>
-        </div>
-      </div>
-      <div class="card">
-        <i data-lucide="credit-card" width="32" height="32"></i>
-        <div class="card-content">
-          <h3>Status da Assinatura</h3>
-          <p>Plano válido até 20/07/2025.</p>
-        </div>
-      </div>
+            
     </div>
 
   </main>

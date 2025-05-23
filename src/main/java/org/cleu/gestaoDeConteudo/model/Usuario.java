@@ -25,9 +25,10 @@ public class Usuario {
     @NotNull
     private String nome;
 
-    @Email
+    @Email(message = "Inseri um email certo!")
     private String email;
 
+    @Size(min = 5 , message = "A sua senha deve ter no {min} 5 carateres")
     private String senha;
 
 

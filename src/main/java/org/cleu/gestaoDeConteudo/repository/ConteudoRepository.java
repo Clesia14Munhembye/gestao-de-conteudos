@@ -14,8 +14,8 @@ public interface ConteudoRepository extends JpaRepository<Conteudo, Integer> {
     @Query("""
                 SELECT DISTINCT c FROM Conteudo c
                 JOIN c.tarefas t
-                WHERE t.usuario.id = :usuarioId
-                ORDER BY c.id
+                WHERE c.id=t.conteudo.id and t.usuario.id = :usuarioId
+                group BY c.id
             """)
     List<Conteudo> findConteudosByUsuarioId(@Param("usuarioId") Integer usuarioId);
 
