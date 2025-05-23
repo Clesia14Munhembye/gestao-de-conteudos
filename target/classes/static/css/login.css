@@ -1,0 +1,67 @@
+    body {
+      background-color: #f9fafb;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .forgot-password a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+    .login-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box; /* Isso vai garantir que a caixa de login leve em consideração o padding */
+}
+
+.input-field {
+  width: 100%; /* Garante que os campos de email e senha ocupem toda a largura disponível */
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Isso vai garantir que o padding e a borda sejam considerados na largura total */
+}

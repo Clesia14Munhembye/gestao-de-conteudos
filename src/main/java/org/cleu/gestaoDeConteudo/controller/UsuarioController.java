@@ -71,7 +71,6 @@ public class UsuarioController {
         return mv;
     }
 
-
     @PostMapping("/fazerlogin")
     public String processLogin(
             @RequestParam String username,

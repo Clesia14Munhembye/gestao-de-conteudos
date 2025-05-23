@@ -1,0 +1,181 @@
+.form-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .form-container {
+  background: #1e293b;
+  color: white;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--secondary-light);
+}
+
+.form-container .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* root css e body*/
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --text: #111827;
+  --muted: #6b7280;
+  --bg: #f9fafb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+
+.hero {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.features .col-md-3 {
+  padding: 1rem;
+}
+
+.theme-toggle {
+  border: none;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .bg-dark {
+  background-color: #1e1e1e !important;
+}
+
+.dark-mode .text-white {
+  color: #ffffff !important;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4rem;
+  bottom: 0px;
+}
+
+/* Botoes */
+.btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #3730a3;
+}
+
+
+/*NaveBar */
+nav>ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f46e5;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 30px;
+}
+
+nav>ul>li {
+  list-style: none;
+}
+
+nav>ul>li>a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+nav>ul>li>a:hover {
+  background-color: #3730a3;
+  color: #e0e7ff;
+}

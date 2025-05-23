@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="RelatorioTarefas" pageWidth="595" pageHeight="842" columnWidth="555"
-              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
-              uuid="12345678-1234-1234-1234-123456789abc">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+              name="RelatorioTarefas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12345678-1234-1234-1234-123456789abc">
 
     <!-- Parameters -->
     <parameter name="nome" class="java.lang.String"/>
@@ -20,13 +18,13 @@
 
     <!-- Title Band -->
     <title>
-        <band height="110">
+        <band height="100">
             <staticText>
                 <reportElement x="0" y="0" width="555" height="30"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle">
-                    <font size="18" isBold="true" fontName="SansSerif"/>
+                    <font size="16" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Sistema de gestão de conteúdo]]></text>
+                <text><![CDATA[Sistema de gestão de conteudo]]></text>
             </staticText>
             <line>
                 <reportElement x="0" y="35" width="555" height="1"/>
@@ -46,82 +44,41 @@
                 <textFieldExpression><![CDATA["Email: " + $P{email}]]></textFieldExpression>
             </textField>
             <line>
-                <reportElement x="0" y="90" width="555" height="1"/>
+                <reportElement x="0" y="85" width="555" height="1"/>
             </line>
         </band>
     </title>
 
     <!-- Column Header -->
     <columnHeader>
-        <band height="22">
-            <staticText>
-                <reportElement x="0" y="0" width="100" height="22" backcolor="#E0E0E0" mode="Opaque"/>
-                <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[Conteúdo]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="100" y="0" width="100" height="22" backcolor="#E0E0E0" mode="Opaque"/>
-                <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[Tema]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="200" y="0" width="120" height="22" backcolor="#E0E0E0" mode="Opaque"/>
-                <textElement><font isBold="true"/></textElement>
-                <text><![CDATA[Legenda]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="320" y="0" width="100" height="22" backcolor="#E0E0E0" mode="Opaque"/>
-                <textElement textAlignment="Right"><font isBold="true"/></textElement>
-                <text><![CDATA[Criação]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="420" y="0" width="120" height="22" backcolor="#E0E0E0" mode="Opaque"/>
-                <textElement textAlignment="Right"><font isBold="true"/></textElement>
-                <text><![CDATA[Prazo]]></text>
-            </staticText>
+        <band height="20">
+            <staticText><reportElement x="0" y="0" width="100" height="20"/><text><![CDATA[Conteúdo]]></text></staticText>
+            <staticText><reportElement x="100" y="0" width="100" height="20"/><text><![CDATA[Tema]]></text></staticText>
+            <staticText><reportElement x="200" y="0" width="120" height="20"/><text><![CDATA[Legenda]]></text></staticText>
+            <staticText><reportElement x="320" y="0" width="100" height="20"/><text><![CDATA[Criação]]></text></staticText>
+            <staticText><reportElement x="420" y="0" width="120" height="20"/><text><![CDATA[Prazo]]></text></staticText>
         </band>
     </columnHeader>
 
     <!-- Detail -->
     <detail>
-        <band height="25">
-            <textField>
-                <reportElement x="0" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{conteudo}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="100" y="0" width="100" height="20"/>
-                <textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="200" y="0" width="120" height="20"/>
-                <textFieldExpression><![CDATA[$F{legenda}]]></textFieldExpression>
-            </textField>
-            <textField pattern="dd/MM/yyyy">
-                <reportElement x="320" y="0" width="100" height="20"/>
-                <textElement textAlignment="Right"/>
-                <textFieldExpression><![CDATA[$F{dataCriacao}]]></textFieldExpression>
-            </textField>
-            <textField pattern="dd/MM/yyyy">
-                <reportElement x="420" y="0" width="120" height="20"/>
-                <textElement textAlignment="Right"/>
-                <textFieldExpression><![CDATA[$F{agendamento}]]></textFieldExpression>
-            </textField>
-            <line>
-                <reportElement x="0" y="24" width="555" height="1" forecolor="#CCCCCC"/>
-            </line>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{conteudo}]]></textFieldExpression></textField>
+            <textField><reportElement x="100" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{tema}]]></textFieldExpression></textField>
+            <textField><reportElement x="200" y="0" width="120" height="20"/><textFieldExpression><![CDATA[$F{legenda}]]></textFieldExpression></textField>
+            <textField><reportElement x="320" y="0" width="100" height="20"/><textFieldExpression><![CDATA[$F{dataCriacao}]]></textFieldExpression></textField>
+            <textField><reportElement x="420" y="0" width="120" height="20"/><textFieldExpression><![CDATA[$F{agendamento}]]></textFieldExpression></textField>
         </band>
     </detail>
 
     <!-- Page Footer -->
-    <pageFooter>
-        <band height="20">
-            <textField>
-                <reportElement x="0" y="0" width="555" height="20"/>
-                <textElement textAlignment="Right"/>
-                <textFieldExpression><![CDATA["Gerado em: " + new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{dataHoje})]]></textFieldExpression>
-            </textField>
-        </band>
-    </pageFooter>
-
+<pageFooter>
+    <band height="20">
+        <textField>
+            <reportElement x="0" y="0" width="555" height="20"/>
+            <textElement textAlignment="Right"/>
+            <textFieldExpression><![CDATA["Gerado em: " + new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{dataHoje})]]></textFieldExpression>
+        </textField>
+    </band>
+</pageFooter>
 </jasperReport>

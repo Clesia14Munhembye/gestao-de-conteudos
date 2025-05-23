@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escolha a Plataforma para Anúncio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" th:href="@{/css/media.css}">
+
+</head>
+
+<body>
+
+  <div th:replace="~{frangment/fragment :: navebar}"></div>
+  <header>
+    <h1>Escolha a Plataforma para Anúncio</h1>
+    <p>Escolha a plataforma onde deseja criar seu anúncio para Meta Ads.</p>
+  </header>
+
+  <div class="media-container">
+    <h2>Selecione a Plataforma</h2>
+    <div class="platforms">
+      <div class="platform-card" onclick="redirectToMetaAds('facebook')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/320px-Facebook_f_logo_%282019%29.svg.png"
+          alt="Facebook" />
+        <h3>Facebook</h3>
+        <p>Crie e gerencie seus anúncios no Facebook.</p>
+      </div>
+      <div class="platform-card" onclick="redirectToMetaAds('instagram')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png"
+          alt="Instagram" />
+        <h3>Instagram</h3>
+        <p>Crie e gerencie seus anúncios no Instagram.</p>
+      </div>
+    </div>
+  </div>
+
+  <div th:replace="~{frangment/fragment :: footer}"></div>
+
+  <script>
+    function redirectToMetaAds(platform) {
+      let url = "";
+      if (platform === "facebook") {
+        url = "https://www.facebook.com/adsmanager";
+      } else if (platform === "instagram") {
+        url = "https://www.facebook.com/adsmanager";
+      }
+      window.location.href = url; // Redireciona para a plataforma de anúncios Meta
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script th:src="@{/js/script.js}" defer></script>
+</body>
+
+</html>
