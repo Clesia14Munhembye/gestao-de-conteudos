@@ -13,6 +13,9 @@
 <body>
   <div class="login-container">
     <h2>Entrar na Plataforma</h2>
+    <div th:if="${error}">
+        <p th:text="${error}" style="color:red;"></p>
+    </div>
     <form th:action="@{/usuario/fazerlogin}" method="post">
       <input type="email" class="input-field" placeholder="Email" name="username" required />
       <input type="password" class="input-field" placeholder="Senha" name="password" required />

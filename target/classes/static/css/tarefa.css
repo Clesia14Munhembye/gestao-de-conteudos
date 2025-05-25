@@ -90,3 +90,44 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+
+
+
+
+.publicacoes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publicacao {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  gap: 20px;
+}
+
+.publicacao-img {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.publicacao-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.publicacao-info h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.publicacao-info p {
+  margin: 0;
+  color: #555;
+}

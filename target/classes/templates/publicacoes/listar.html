@@ -34,12 +34,21 @@
     <div id="taskList" th:if="${plataformas}">
       <div class="publicacoes-container">
         <div th:each="pt : ${plataformas}" class="publicacao">
-          <img th:src="${pt.imagem}" alt="Imagem" width="200">
-          <h3 th:text="${pt.plataforma.nome}">Nome da Plataforma</h3>
+          <img th:src="@{${pt.imagem}}" alt="Imagem" class="publicacao-img">
+
+          <div class="publicacao-info">
+            <h3 th:text="|Publicado em: ${pt.plataforma.nome}|">Nome da Plataforma</h3>
+            <p><strong>Coteudo:</strong> <span th:text="${pt.tarefa.conteudo.nome}">Nome da tarefa</span></p>
+            <p><strong> Tema da tarefa:</strong> <span th:text="${pt.tarefa.tema}">Nome da tarefa</span></p>
+            <p><strong>Descrição:</strong> <span th:text="${pt.tarefa.legenda}">Conteúdo da tarefa</span></p>
+            <p><strong>Data de publicação:</strong> <span
+                th:text="|${#dates.format(pt.dataPublicacao, 'dd/MM/yyyy')} às ${#dates.format(pt.dataPublicacao, 'HH:mm')}|">01/01/2025</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <div id="taskList" th:if="${plataformas == null or #lists.isEmpty(conteudos)}">
+    <div id="taskList" th:if="${plataformas == null or #lists.isEmpty(plataformas)}">
       <div class="notion-card">
         <h4>Ops, Ainda não tem nenhuma publicação feita</h4>
       </div>

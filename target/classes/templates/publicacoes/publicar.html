@@ -18,11 +18,10 @@
 
             <!-- Nome da plataforma -->
             <div class="form-group">
-                <label for="nome">Nome da Plataforma</label>
-                <select name="nome" id="nome" required>
-                    <option value="">Escolha ...</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="Instagram">Instagram</option>
+                <label for="plataforma">Nome da Plataforma</label>
+                <select name="plataforma" id="plataforma" required>
+                    <option value="">Escolha uma plataforma...</option>
+                    <option th:each="plataforma : ${plataformas}" th:value="${plataforma.id}" th:text="${plataforma.nome}" >Facebook</option>
                 </select>
             </div>
 

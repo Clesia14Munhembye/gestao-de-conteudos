@@ -1,6 +1,5 @@
 package org.cleu.gestaoDeConteudo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.cleu.gestaoDeConteudo.model.Plataforma;
@@ -25,8 +24,8 @@ public class PlataformaService {
     public void init() {
         if (repository.count() == 0) { // Evita salvar duplicados
             List<Plataforma> plataformas = List.of(
-                new Plataforma(null, "Facebook"),
-                new Plataforma(null, "Instagram")
+                new Plataforma(1, "Facebook"),
+                new Plataforma(2, "Instagram")
             );
             repository.saveAll(plataformas);
         }

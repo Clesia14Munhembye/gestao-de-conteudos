@@ -1,11 +1,9 @@
 package org.cleu.gestaoDeConteudo.controller;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
-import java.util.List;
 import java.util.UUID;
 
 import org.cleu.gestaoDeConteudo.model.Plataforma;
@@ -46,38 +44,36 @@ public class PlataformaController {
     private String uploadDir; // Diretório onde salvar as imagens
 
     @PostMapping("/save")
-public String salvarPlataforma(
-    @RequestParam("nome") String nome,
-    @RequestParam("tarefa") Integer tarefaId,
-    @RequestParam("imagem") MultipartFile imagem
-) throws Exception {
+    public String salvarPlataforma(
+            @RequestParam("plataforma") Integer plataformaId,
+            @RequestParam("tarefa") Integer tarefaId,
+            @RequestParam("imagem") MultipartFile imagem) throws Exception {
 
-    Tarefa tarefa = tarefaRepository.findById(tarefaId)
-        .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+        Tarefa tarefa = tarefaRepository.findById(tarefaId)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
 
-    Plataforma plataforma = new Plataforma();
-    plataforma.setNome(nome);
-    plataformaRepository.save(plataforma);
+        Plataforma plataforma = plataformaRepository.findById(plataformaId)
+                .orElseThrow(() -> new RuntimeException("Platafomra não encontrada"));
 
-    // Salvar a imagem
-    String fileName = UUID.randomUUID() + "_" + imagem.getOriginalFilename();
-    Path path = Paths.get(uploadDir);
-    if (!Files.exists(path)) {
-        Files.createDirectories(path);
+        // Salvar a imagem
+        String fileName = UUID.randomUUID() + "_" + imagem.getOriginalFilename();
+        Path path = Paths.get(uploadDir);
+        if (!Files.exists(path)) {
+            Files.createDirectories(path);
+        }
+        Files.write(path.resolve(fileName), imagem.getBytes());
+
+        // Criar associação
+        PlataformaTarefa pt = new PlataformaTarefa();
+        pt.setId(new PlataformaTarefaId(plataforma.getId(), tarefa.getId()));
+        pt.setPlataforma(plataforma);
+        pt.setTarefa(tarefa);
+        pt.setImagem("/uploads/" + fileName);
+
+        plataformaTarefaRepository.save(pt);
+
+        return "redirect:/plataforma/get";
     }
-    Files.write(path.resolve(fileName), imagem.getBytes());
-
-    // Criar associação
-    PlataformaTarefa pt = new PlataformaTarefa();
-    pt.setId(new PlataformaTarefaId(plataforma.getId(), tarefa.getId()));
-    pt.setPlataforma(plataforma);
-    pt.setTarefa(tarefa);
-    pt.setImagem("/uploads/" + fileName);
-
-    plataformaTarefaRepository.save(pt);
-
-    return "redirect:/plataforma/get";
-}
 
     @GetMapping("/get")
     public String listarPlataformas(Model model) {
@@ -90,6 +86,7 @@ public String salvarPlataforma(
         System.out.println("Email que esta a usar sistema agora --- " + principal.getName());
         Usuario usuario = usuarioRepository.findByEmail(principal.getName()).orElse(null);
         model.addAttribute("tarefas", tarefaRepository.findByUsuarioId(usuario.getId()));
+        model.addAttribute("plataformas", plataformaRepository.findAll());
         return "publicacoes/publicar";
     }
 }

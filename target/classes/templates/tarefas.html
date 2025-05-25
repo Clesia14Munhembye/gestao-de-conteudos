@@ -37,7 +37,7 @@
           <!-- Só exibir se o usuário for o dono -->
           <div th:if="${tarefa.usuario.id == user}">
             <p><strong>Tema:</strong> <span th:text="${tarefa.tema}">Tema</span></p>
-            <p><strong>Legenda:</strong> <span th:text="${tarefa.legenda}">Legenda</span></p>
+            <p><strong>Desctição:</strong> <span th:text="${tarefa.legenda}">Legenda</span></p>
             <p><strong>Criado em:</strong>
               <span th:text="${#dates.format(tarefa.dataCriacao, 'dd/MM/yyyy')}">Data</span>
             </p>
@@ -73,7 +73,7 @@
             <div class="tarefa" th:each="tarefa, iterStat : *{tarefas}">
               <label>Tema</label>
               <input type="text" th:field="*{tarefas[__${iterStat.index}__].tema}" />
-              <label>Legenda</label>
+              <label>Descrição do Tema:</label>
               <input type="text" th:field="*{tarefas[__${iterStat.index}__].legenda}" />
               <label>Prazo</label>
               <input type="date" th:field="*{tarefas[__${iterStat.index}__].agendamento}" />

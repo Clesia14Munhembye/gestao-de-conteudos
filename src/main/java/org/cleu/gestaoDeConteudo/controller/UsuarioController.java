@@ -93,7 +93,7 @@ public class UsuarioController {
             return "redirect:/usuario/plano/get?usuarioId=" + usuario.getId();
 
         } catch (org.springframework.security.core.AuthenticationException e) {
-            model.addAttribute("error", "Credenciais inválidas");
+            model.addAttribute("error", "Credenciais inválidas, insira credencias certas");
             return "usuario/login";
         }
     }

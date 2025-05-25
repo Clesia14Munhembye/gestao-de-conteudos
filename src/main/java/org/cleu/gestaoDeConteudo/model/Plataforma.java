@@ -14,7 +14,6 @@ import lombok.*;
 @Table(name = "plataforma")
 public class Plataforma {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(max = 50)
