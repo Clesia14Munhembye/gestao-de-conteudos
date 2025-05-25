@@ -76,8 +76,8 @@ public class PlataformaController {
     }
 
     @GetMapping("/get")
-    public String listarPlataformas(Model model) {
-        model.addAttribute("plataformas", plataformaTarefaRepository.findAll());
+    public String listarPlataformas(Model model, Principal principal) {
+        model.addAttribute("plataformas", plataformaTarefaRepository.findByIdUsuarioId(usuarioRepository.findByEmail(principal.getName()).get().getId()));
         return "publicacoes/listar";
     }
 
